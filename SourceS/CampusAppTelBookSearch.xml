@@ -1,0 +1,9 @@
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"
+                       xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+<ShortName>IABG Telefonbuch</ShortName>
+<Description>IABG Telefonbuch</Description>
+<InputEncoding>UTF-8</InputEncoding>
+<Url type="text/html" method="get" template="https://portal.iabg.de/SitePages/CampusApp_TelBook.aspx?FilterVal={searchTerms}">
+</Url>
+<moz:SearchForm>https://portal.iabg.de/SitePages/CampusApp_TelBook.aspx</moz:SearchForm>
+</OpenSearchDescription>

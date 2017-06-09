@@ -1,0 +1,21 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+</head>
+<body>
+	<h2>XrmDocSet_Init.nwf</h2>
+	<p>Aufruf des WebService vom xRM aus.</p>
+	<h3>InitialCall</h3>
+	<p>Mappe wird angelegt und Name, Beschreibung, Ablaufdatum, sowie Guid werden eingetragen. <br />
+	Zusätzlich wird versucht alle Gruppen in die Berechtigungsfelder einzutragen, nachdem deren Gültigkeit überprüft wird.<br />
+	Um den ersten Zugriff zu verbessern wird hier die Managergruppe sofort berechtigt.</p>
+	<h3>UpdateCall</h3>
+	<p>Es wird für eine existierende Mappe das Ablaufdatum aktualisiert.</p>
+	<h2>Berechtigungen_vergeben.nwf</h2>
+	<p>Sobald eine Mappe angelegt oder geändert wird, läuft der Workflow los und setzt die Berechtigungen auf ein Element.</p>
+	<h2>XrmDocSet.*.js</h2>
+	<p>Diese Datei wird in der Mappe eingebettet und übernimmt auch das Anlegen der initialen Ordnerstruktur.</p>
+	<h2>XrmDocSetEditForm.*.js</h2>
+	<p>Im Bearbeitenformular werden ein paar kleiner Manipulationen vorgenommen.</p>
+</body>
+</html>

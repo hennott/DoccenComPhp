@@ -1,0 +1,81 @@
+{
+	"Global": {
+		"Language":"Deutsch",
+		"Start": "Start"
+	},
+	"Workflow": {
+		"Run": "Ausführen",
+		"Action": "Aktionen",
+		"Log": "Protokoll",
+		"AutoDoc": "AutoDoc",
+		"Selection": "Auswahl",
+		"Save": "Speichern"
+	},	
+	"Composer": {
+		"Add": "Zuweisen",
+		"Remove": "Entfernen",
+		"Run": "Ausführen",
+		"Parts": "Quelldateien",
+		"Target": "Zieldateien",
+		"Log": "Protokoll"
+	},
+	"Grabber": {
+		"Add": "Zuweisen",
+		"Remove": "Entfernen",
+		"Run": "Ausführen",
+		"Source": "Quelldateien",
+		"Target": "Dokumentation",
+		"RemoveS": "Gelöschte Dateien",
+		"CopyS": "Kopierte Dateien"
+	},
+	"AutoDoc": {
+		"StartHeadLeft": "DocInfo",
+		"StartView": "Ansicht",
+		"DocName": "Dokumentation",
+		"DocSStartView": "Projekt",
+		"User": "Anwender",
+		"Expert": "Experten",
+		"Navi": "Menü",
+		"Start": "Startseite",
+		"NaviToStart": "Start",
+		"Function": "Funktionen",
+		"SortFuncByFile": "sortiert nach Dateinamen",
+		"SortFuncByName": "sortiert nach Funktionsnamen",
+		"File": "Dateien",
+		"Path": "Pfad",
+		"Chapter": "Kapitel",
+		"ErrorLog": "ErrorLog",
+		"RequestLog": "RequestLog",
+		"ChangeLog": "ChangeLog",
+		"ChangeLogShow": "ANZEIGEN (Der ChangeLog wurde wegen seiner Länge ausgeblendet)",
+		"RawIndex": "Rohdaten",
+		"SearchMode": "Suchansicht",
+		"AutoDocInfo": "AutoDoc Info",
+		"Export": "Exportieren",
+		"Version": "Version",
+		"FileCount": "Anzahl Dateien",
+		"CountOf": "von",
+		"ChapterCount": "Anzahl Kapitel",
+		"FunctionCount": "Anzahl Funktionen",
+		"LogCount": "Anzahl Änderungen",
+		"ErrorCount": "Anzahl Fehler",
+		"RequestCount": "Anzahl Anfragen",
+		"DocReleaseDate": "Stand",
+		"LinkToHome": "Aktuelle Infos & Updates",
+		"LinkToSelfDocu": "AutoDoc aktuelle API Dokumentation",
+		"Headline": "Überschrift",
+		"Author": "Autor",
+		"Request": "Anfrage",
+		"BasicHelp": {
+			"Info": "Mit diesem Tool kann man schnell und einfach eine Dokumentation direkt aus den Kommentaren in ihren Quelldateien generieren. AutoDoc ist Teil eine Abo-Modells und wird durch dieses lizensiert. Geben sie uns auf unserer WebSite Feedback zum Tool. In den Schulungsvideos erlernen sie den Umgang.<br />Viel Erfolg!",
+			"HeadlineCommentDirect": "Kommentierungen die direkt sichtbar werden",
+			"HeadlineCommentIndirect": "Kommentierungen die indirekt sichtbar werden",
+			"HeadlineCommentHidden": "Kommentierungen die nur unsichtbar steuern",
+			"KnownIssue": "Bekannte Fehler",
+			"ParseStart": "Parsen wieder starten (nur nach @stop nötig)",
+			"ParseStop": "Parsen anhalten",
+			"TranslateComment": "Ordnet einen Kommentar einer Sprache zu (de = Deutsch)<br />Beispiel: @D :de:Hier steht der Text",
+			"TranslateFile": "Ordnet eine Datei einer Sprache zu <br />Beispiel: Kapitel01.de.html"
+		}
+	}
+}

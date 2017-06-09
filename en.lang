@@ -1,0 +1,83 @@
+{
+	"Global": {
+		"Language":"English",
+		"Start": "Start"
+	},
+	"Workflow": {
+		"Run": "Run",
+		"Action": "Action",
+		"Log": "Protocol",
+		"AutoDoc": "AutoDoc",
+		"Selection": "Selection",
+		"Save": "Save"
+	},
+	"Composer": {
+		"Add": "Add",
+		"Remove": "Remove",
+		"Run": "Run",
+		"Parts": "Source files",
+		"Target": "Target files",
+		"Log": "Protocol"
+	},
+	"Grabber": {
+		"Add": "Add",
+		"Remove": "Remove",
+		"Run": "Run",
+		"Source": "Source files",
+		"Target": "Documentation",
+		"RemoveS": "Deleted files",
+		"CopyS": "Copied files"		
+	},
+	"AutoDoc": {
+		"StartHeadLeft": "DocInfo",
+		"StartView": "View",
+		"DocName": "Documentation",
+		"DocSStartView": "Project",
+		"User": "Users",
+		"Expert": "Experts",
+		"Navi": "Menü",
+		"Start": "Homepage",
+		"NaviToStart": "Start",
+		"Function": "Function",
+		"SortFuncByFile": "sort by filename",
+		"SortFuncByName": "sort by name of function",
+		"SortFileByFolder": "sort by path",
+		"SortFileByName": "sort by name of file",
+		"File": "File",
+		"Path": "Path",
+		"Chapter": "Chapter",
+		"ErrorLog": "ErrorLog",
+		"RequestLog": "RequestLog",
+		"ChangeLog": "ChangeLog",
+		"ChangeLogShow": "SHOW (The ChangeLog is hidden because of its length)",
+		"RawIndex": "RawIndex",
+		"SearchMode": "SearchMode",
+		"AutoDocInfo": "AutoDoc Info",
+		"Export": "Export",
+		"Version": "Version",
+		"FileCount": "File",
+		"CountOf": "of",
+		"ChapterCount": "Chapter",
+		"FunctionCount": "Functionen",
+		"LogCount": "Log",
+		"ErrorCount": "Error",
+		"RequestCount": "Request",
+		"DocReleaseDate": "Release",
+		"LinkToHome": "More information and updates",
+		"LinkToSelfDocu": "AutoDoc current API documentation",
+		"Headline": "Headline",
+		"Author": "Author",
+		"Request": "Request",
+		"BasicHelp": {
+			"Info": "With this tool you can easily and generate documentation directly from the comments in your source files. AutoDoc is part of a subscription model and is automatically licensed by your subscription. Give us feedback on our website about the tool and watch the video manual.<br />Good luck!",
+			"HeadlineCommentDirect": "Comments which are directly represented",
+			"HeadlineCommentIndirect": "Comments which are only indirect visible",
+			"HeadlineCommentHidden": "Comments which are only in the background",
+			"KnownIssue": "Known error",
+			"ParseStart": "Restart parsing (only needed after @stop)",
+			"ParseStop": "Stop parsing",
+			"TranslateComment": "Assigns a comment to a language (en = English)<br />Example: @D :en:Here is the text",
+			"TranslateFile": "Assigns a file to a language <br />Example: Chapter01.en.html"
+		}
+	}
+}

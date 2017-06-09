@@ -1,0 +1,140 @@
+﻿<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+</head>
+<body>
+	<h1>Installation des TransBerry</h1>
+<h3>
+	Module erg&auml;nzen</h3>
+<p>sudo a2enmod rewrite proxy proxy_http ssl</p>
+<p>sudo service apache2 restart</p>
+<p>&nbsp;</p>
+<p>Seite erstellen &amp; aktivieren</p>
+<h3>
+	User anlegen</h3>
+<p>sudo nano muc-users</p>
+<p>myadmin:$apr1$BKQn822d$tngGG4jVsuP0bUT.GDw8q1</p>
+<p>&nbsp;</p>
+<h3>
+	Zertifikate ablegen</h3>
+<p>sudo mkdir /etc/myssl</p>
+<p>sudo nano public.crt<br />
+	sudo nano privkey.key<br />
+	sudo nano chain-class2.ca</p>
+<h3>
+	Seite anlegen</h3>
+<p>/etc/apache2/sites-available</p>
+<p>sudo nano sitename</p>
+<p>NameVirtualHost *:443<br />
+	<br />
+	&lt;VirtualHost *:443&gt;<br />
+	&nbsp;&nbsp;&nbsp; ServerName muc-server.hennott.de<br />
+	<br />
+	&nbsp;&nbsp;&nbsp; SSLProxyEngine On<br />
+	&nbsp;&nbsp;&nbsp; ProxyPass / https://192.168.0.12:44380/<br />
+	&nbsp;&nbsp;&nbsp; ProxyPassReverse / https://192.168.0.12:44380/<br />
+	<br />
+	&nbsp;&nbsp;&nbsp; SSLEngine on<br />
+	&nbsp;&nbsp;&nbsp; SSLCertificateFile /etc/myssl/public.crt<br />
+	&nbsp;&nbsp;&nbsp; SSLCertificateKeyFile /etc/myssl/privkey.key<br />
+	&nbsp;&nbsp;&nbsp; SSLCertificateChainFile /etc/myssl/chain-class2.ca<br />
+	&lt;/VirtualHost&gt;<br />
+	<br />
+	&lt;VirtualHost *:443&gt;<br />
+	&nbsp;&nbsp;&nbsp; ServerName muc-files.hennott.de<br />
+	<br />
+	&nbsp;&nbsp;&nbsp; SSLProxyEngine On<br />
+	&nbsp;&nbsp;&nbsp; ProxyPass / https://192.168.0.12:44380/<br />
+	&nbsp;&nbsp;&nbsp; ProxyPassReverse / https://192.168.0.12:44380/<br />
+	<br />
+	&nbsp;&nbsp;&nbsp; SSLEngine on<br />
+	&nbsp;&nbsp;&nbsp; SSLCertificateFile /etc/myssl/public.crt<br />
+	&nbsp;&nbsp;&nbsp; SSLCertificateKeyFile /etc/myssl/privkey.key<br />
+	&nbsp;&nbsp;&nbsp; SSLCertificateChainFile /etc/myssl/chain-class2.ca<br />
+	&lt;/VirtualHost&gt;<br />
+	<br />
+	&lt;VirtualHost *:443&gt;<br />
+	&nbsp;&nbsp;&nbsp; ServerName muc-web.hennott.de<br />
+	<br />
+	&nbsp;&nbsp;&nbsp; &lt;Location /&gt;<br />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AuthType Basic<br />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AuthName &quot;MucService&quot;<br />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AuthUserFile /etc/muc-users<br />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Require valid-user<br />
+	&nbsp;&nbsp;&nbsp; &lt;/Location&gt;<br />
+	<br />
+	&nbsp;&nbsp;&nbsp; SSLProxyEngine On<br />
+	&nbsp;&nbsp;&nbsp; ProxyPass / https://192.168.0.12:44381/<br />
+	&nbsp;&nbsp;&nbsp; ProxyPassReverse / https://192.168.0.12:44381/<br />
+	<br />
+	&nbsp;&nbsp;&nbsp; SSLEngine on<br />
+	&nbsp;&nbsp;&nbsp; SSLCertificateFile /etc/myssl/public.crt<br />
+	&nbsp;&nbsp;&nbsp; SSLCertificateKeyFile /etc/myssl/privkey.key<br />
+	&nbsp;&nbsp;&nbsp; SSLCertificateChainFile /etc/myssl/chain-class2.ca<br />
+	&lt;/VirtualHost&gt;</p>
+<p>&lt;VirtualHost *:443&gt;<br />
+	&nbsp;&nbsp;&nbsp; ServerName muc-homebase.hennott.de<br />
+	<br />
+	&nbsp;&nbsp;&nbsp; &lt;Location /&gt;<br />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AuthType Basic<br />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AuthName &quot;MucService&quot;<br />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AuthUserFile /etc/muc-users<br />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Require valid-user<br />
+	&nbsp;&nbsp;&nbsp; &lt;/Location&gt;<br />
+	<br />
+	&nbsp;&nbsp;&nbsp; SSLProxyEngine On<br />
+	&nbsp;&nbsp;&nbsp; ProxyPass / https://192.168.0.19:44382/<br />
+	&nbsp;&nbsp;&nbsp; ProxyPassReverse / https://192.168.0.19:44382/<br />
+	<br />
+	&nbsp;&nbsp;&nbsp; SSLEngine on<br />
+	&nbsp;&nbsp;&nbsp; SSLCertificateFile /etc/myssl/public.crt<br />
+	&nbsp;&nbsp;&nbsp; SSLCertificateKeyFile /etc/myssl/privkey.key<br />
+	&nbsp;&nbsp;&nbsp; SSLCertificateChainFile /etc/myssl/chain-class2.ca<br />
+	&lt;/VirtualHost&gt;</p>
+<p>&lt;VirtualHost *:443&gt;<br />
+	&nbsp;&nbsp;&nbsp; ServerName muc-cam1.hennott.de<br />
+	<br />
+	&nbsp;&nbsp;&nbsp; &lt;Location /&gt;<br />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AuthType Basic<br />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AuthName &quot;MucService&quot;<br />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AuthUserFile /etc/muc-users<br />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Require valid-user<br />
+	&nbsp;&nbsp;&nbsp; &lt;/Location&gt;<br />
+	<br />
+	&nbsp;&nbsp;&nbsp; SSLProxyEngine On<br />
+	&nbsp;&nbsp;&nbsp; ProxyPass / http://192.168.0.15:8081/<br />
+	&nbsp;&nbsp;&nbsp; ProxyPassReverse / http://192.168.0.15:8081/<br />
+	<br />
+	&nbsp;&nbsp;&nbsp; SSLEngine on<br />
+	&nbsp;&nbsp;&nbsp; SSLCertificateFile /etc/myssl/public.crt<br />
+	&nbsp;&nbsp;&nbsp; SSLCertificateKeyFile /etc/myssl/privkey.key<br />
+	&nbsp;&nbsp;&nbsp; SSLCertificateChainFile /etc/myssl/chain-class2.ca<br />
+	&lt;/VirtualHost&gt;<br />
+	<br />
+	&lt;VirtualHost *:443&gt;<br />
+	&nbsp;&nbsp;&nbsp; ServerName muc-cam2.hennott.de<br />
+	<br />
+	&nbsp;&nbsp;&nbsp; &lt;Location /&gt;<br />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AuthType Basic<br />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AuthName &quot;MucService&quot;<br />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AuthUserFile /etc/muc-users<br />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Require valid-user<br />
+	&nbsp;&nbsp;&nbsp; &lt;/Location&gt;<br />
+	<br />
+	&nbsp;&nbsp;&nbsp; SSLProxyEngine On<br />
+	&nbsp;&nbsp;&nbsp; ProxyPass / http://192.168.0.8:8081/<br />
+	&nbsp;&nbsp;&nbsp; ProxyPassReverse / http://192.168.0.8:8081/<br />
+	<br />
+	&nbsp;&nbsp;&nbsp; SSLEngine on<br />
+	&nbsp;&nbsp;&nbsp; SSLCertificateFile /etc/myssl/public.crt<br />
+	&nbsp;&nbsp;&nbsp; SSLCertificateKeyFile /etc/myssl/privkey.key<br />
+	&nbsp;&nbsp;&nbsp; SSLCertificateChainFile /etc/myssl/chain-class2.ca<br />
+	&lt;/VirtualHost&gt;</p>
+<p>sudo a2ensite sitename<br />
+	sudo service apache2 restart</p>
+<h2>
+	AMP aufbauen</h2>
+<p>&nbsp;</p>
+
+</body>
+</html>

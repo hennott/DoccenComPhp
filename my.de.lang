@@ -1,0 +1,21 @@
+{
+	"Composer": {
+		"Add": "Anlegen",
+		"Remove": "Entfernen",
+		"Run": "Ausführen",
+		"Parts": "Quelldateien",
+		"Target": "Zieldateien"
+	},
+	"Grabber": {
+		"Add": "Anlegen",
+		"Remove": "Entfernen",
+		"Run": "Ausführen",
+		"Source": "Quelldateien",
+		"Target": "Dokumentation",
+		"RemoveS": "Gelöschte Dateien",
+		"CopyS": "Kopierte Dateien"
+	},
+	"AutoDoc": {
+		"Chapter": "Informationen"
+	}
+}
